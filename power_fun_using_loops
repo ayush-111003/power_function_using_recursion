@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int fun(int m,int n)//m^n
+{   int out{m};
+    for (int i = 1; i <n; i++)
+    {
+         out *= m;
+    }
+    return out;
+    
+}
+
+int main()
+{   
+    cout<<fun(2,9);
+    return 0;
+}
+
