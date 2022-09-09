@@ -1,56 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 //memoisation of fibonacci series of recursion 
 int F[10];
-
-int
-mfib (int n) 
+int mfib(int n)
 {
-  
-if (n <= 1)
-    
+    if(n<=1)
+    {    F[n]=n;
+        return n;
+    }
+    else
     {
-      F[n] = n;
-      
-return n;
+        if(F[n-1]==-1)
+            F[n-1]=mfib(n-1);
+        if(F[n-2]==-1)
+            F[n-2]=mfib(n-2);
+        F[n] = F[n-2] + F[n-2];
+        return F[n-2] + F[n-1];
+    }
     
 }
-  
-  else
-    
+int main()
+{   
+    for(int i = 0 ; i<10 ; i++)
     {
-      
-if (F[n - 1] == -1)
-	
-F[n - 1] = mfib (n - 1);
-      
-if (F[n - 2] == -1)
-	
-F[n - 2] = mfib (n - 2);
-      
- 
-return F[n - 2] + F[n - 1];
-    
-}
-
- 
-}
-
-
-int
-main () 
-{
-  
-for (int i = 0; i < 10; i++)
-    
-    {
-      
-F[i] = -1;
-    
-} 
-cout << mfib (3);
-  
-return 0;
-
+        F[i]=-1;
+    }
+    cout<<mfib(5);
+   return 0 ;
 }
