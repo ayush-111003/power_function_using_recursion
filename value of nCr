@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//to calculate the value of nCr using recursion
+//to calculate the value of nCr 
 int n , r;
 int fact(int a)
 {
