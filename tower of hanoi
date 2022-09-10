@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+//tower of hanoi problem using recursion
+//***************************given attributes in fun*******************************
+//n-(no of rings)
+//A - source,from tower
+//B - by ,auxillary tower
+//C - to, destination tower
+
+void toh(int n , int A , int B, int C)
+{
+    if(n>0)
+    {
+        toh(n-1,A ,C , B);
+        cout<<" from "<< A <<" to " <<C<<" using "<<B<<endl;
+        toh(n-1 ,B ,A,C);
+    }
+}
+int main()
+{   int a ;
+    cout<<"enter the value of no of rings ";
+    cin>>a;
+    toh(a ,1,  2, 3);
+    return 0 ;
+}
